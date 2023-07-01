@@ -1,0 +1,104 @@
+@import "../../Variables.scss";
+@import "../../Mixins.scss";
+
+.header {
+  color: #ffffff;
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Poppins", sans-serif;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1;
+  transition: all 0.3s ease-in-out;
+  & > .logoLink > .headerLogo {
+    width: 2.5rem;
+  }
+}
+
+.sticky {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  opacity: 0.8;
+}
+.buttonMenu {
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+.close {
+  display: none;
+}
+.menu {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+  width: 30%;
+  height: 100vh;
+  padding: 2rem;
+  & > span {
+    display: block;
+    text-align: right;
+    cursor: pointer;
+  }
+  & > ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    & > li {
+      padding: 1rem;
+      text-align: center;
+      border-bottom: 1px solid #d5d5d5;
+      & > a {
+        cursor: pointer;
+      }
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+  }
+}
+.menuActive {
+  display: block;
+}
+.itemUnderline {
+  position: relative;
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    font-size: 1.2rem;
+  }
+}
+
+.itemUnderline::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 4px;
+  bottom: 0;
+  left: 0;
+  background-color: #d5d5d5;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.itemUnderline:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+.menu.is-animating {
+  display: block !important;
+}
+
+// MEDIA QUERIES
+
+@media screen and (max-width: 768px) {
+  .menu {
+    width: 50%;
+  }
+}

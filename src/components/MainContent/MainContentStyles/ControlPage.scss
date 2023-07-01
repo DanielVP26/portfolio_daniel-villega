@@ -1,0 +1,34 @@
+@import "../../../Variables.scss";
+@import "../../../Mixins.scss";
+
+.ControlPageBtn {
+  @include flex;
+  cursor: pointer;
+  font-weight: 700;
+  font-family: Helvetica, "sans-serif";
+  transition: all 0.2s;
+  padding: 10px 20px;
+  border-radius: 100px;
+  border: 1px solid transparent;
+  background: transparent;
+  & > i {
+    transition: all 0.3s ease-in-out;
+    color: #d5d5d5;
+    &:hover {
+      transform: translateX(5px);
+      color: $color-tertiary;
+    }
+  }
+  &.ControlPageBtn--next {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  &.ControlPageBtn--prev {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}

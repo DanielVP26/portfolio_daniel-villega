@@ -1,0 +1,30 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+ion-icon {
+  font-size: 2em;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+body {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+  background-color: #1d1d1d;
+  overflow-x: hidden;
+}
+
+.material-icons.md-36 {
+  font-size: 36px;
+}

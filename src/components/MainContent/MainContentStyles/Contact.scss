@@ -1,0 +1,99 @@
+@import "../../../Variables.scss";
+@import "../../../Mixins.scss";
+
+.contact {
+  @include flex;
+  background-color: $color-primary;
+  color: #fff;
+  flex-direction: column;
+  padding: 2rem;
+  gap: 2rem;
+  font-family: "Poppins", sans-serif;
+  height: 100vh;
+}
+
+.contactForm {
+  @include flex-column;
+  width: 100%;
+  gap: 1rem;
+  & > div {
+    @include flex;
+    width: 50%;
+    gap: 1rem;
+    & > input {
+      width: 50%;
+      padding: 1rem;
+      border-radius: 1rem;
+      outline: none;
+    }
+  }
+  & > textarea {
+    width: 50%;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 1rem;
+    outline: none;
+  }
+  & > button {
+    cursor: pointer;
+    width: 50%;
+    background: #f4f4f4;
+    color: #000;
+    border: none;
+    padding: 1rem;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    display: inline-block;
+    transition: color 0.5s;
+    &::after {
+      content: "";
+      background: $color-tertiary;
+      position: absolute;
+      z-index: -1;
+      padding: 16px 20px;
+      display: block;
+      top: 0;
+      bottom: 0;
+      left: -100%;
+      right: 100%;
+      -webkit-transition: all 0.8s;
+      transition: all 0.8s;
+    }
+    &:hover::after {
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      -webkit-transition: all 0.8s;
+      transition: all 0.8s;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .contactForm {
+    margin-bottom: 2rem;
+    & > p {
+      text-align: center;
+    }
+    & > div {
+      width: 70%;
+      & > input {
+        width: 70%;
+      }
+    }
+    & > textarea {
+      width: 70%;
+    }
+    & > button {
+      width: 70%;
+      font-size: 1rem;
+      padding: 0.5rem;
+      font-weight: 500;
+    }
+  }
+}
